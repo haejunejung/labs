@@ -21,23 +21,20 @@ importers:
   app:
     dependencies:
       '@apollo/client':
-        specifier: 4.3.8
-        version: 4.3.8(graphql@17.1.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)
+        specifier: 3.14.1
+        version: 3.14.1(@types/react@19.3.0)(graphql@16.15.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@labs/apollo-client':
         specifier: workspace:*
         version: link:../packages/apollo-client
       graphql:
-        specifier: 17.1.0
-        version: 17.1.0
+        specifier: 16.15.0
+        version: 16.15.0
       react:
         specifier: 19.3.1
         version: 19.3.1
       react-dom:
         specifier: 19.3.1
         version: 19.3.1(react@19.3.1)
-      rxjs:
-        specifier: 7.8.2
-        version: 7.8.2
     devDependencies:
       '@types/react':
         specifier: 19.3.0
@@ -55,8 +52,8 @@ importers:
   packages/apollo-client:
     devDependencies:
       '@apollo/client':
-        specifier: 4.3.8
-        version: 4.3.8(graphql@17.1.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)
+        specifier: 3.14.1
+        version: 3.14.1(@types/react@19.3.0)(graphql@16.15.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@jest/globals':
         specifier: 30.5.2
         version: 30.5.2
@@ -82,8 +79,8 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(@types/react@19.3.0)
       graphql:
-        specifier: 17.1.0
-        version: 17.1.0
+        specifier: 16.15.0
+        version: 16.15.0
       jest:
         specifier: 30.5.2
         version: 30.5.2(@types/node@26.6.6)
@@ -96,9 +93,6 @@ importers:
       react-dom:
         specifier: 19.3.1
         version: 19.3.1(react@19.3.1)
-      rxjs:
-        specifier: 7.8.2
-        version: 7.8.2
 
   packages/mock-server:
     dependencies:
@@ -118,14 +112,13 @@ packages:
   '@adobe/css-tools@4.5.0':
     resolution: {integrity: sha512-6OzddxPio9UiWTCemp4N8cYLV2ZN1ncRnV1cVGtve7dhPOtRkleRyx32GQCYSwDYgaHU3USMm84tNsvKzRCa1Q==}
 
-  '@apollo/client@4.3.8':
-    resolution: {integrity: sha512-g04oCNYjbbjpecZmcUOE0fZLt3vMFwoZJ+o4iu0N3bDDhMR95/ZVzWL9v3mM7WDSPxI0++P2348yAbSWceLoZA==}
+  '@apollo/client@3.14.1':
+    resolution: {integrity: sha512-SgGX6E23JsZhUdG2anxiyHvEvvN6CUaI4ZfMsndZFeuHPXL3H0IsaiNAhLITSISbeyeYd+CBd9oERXQDdjXWZw==}
     peerDependencies:
-      graphql: ^16.0.0 || ^17.0.0
+      graphql: ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5 || ^6.0.3
-      react: ^17.0.0 || ^18.0.0 || >=19.0.0-rc
-      react-dom: ^17.0.0 || ^18.0.0 || >=19.0.0-rc
-      rxjs: ^7.3.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc
       subscriptions-transport-ws: ^0.9.0 || ^0.11.0
     peerDependenciesMeta:
       graphql-ws:
@@ -1680,6 +1673,10 @@ packages:
     peerDependencies:
       graphql: ^16.0.0 || ^17.0.0
 
+  graphql@16.15.0:
+    resolution: {integrity: sha512-32kz9FecohDiC/tgcViwnRXM7HFBVTPiW7pHO+DikKOI5KjhU/jNULOReXsrFqt2WAYbE9xFXsTffJw6iTO8qw==}
+    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+
   graphql@17.1.0:
     resolution: {integrity: sha512-JKCOa7rSQNrket/JFhuua86hljUO+IIpyUHfKxlKD6FEfbrLX8jc1FDrA0KPKI+s8OspBCF/5npYccAICHXPpQ==}
     engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
@@ -1687,6 +1684,9 @@ packages:
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
+
+  hoist-non-react-statics@3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
 
   html-encoding-sniffer@4.0.0:
     resolution: {integrity: sha512-Y22oTqIU4uuPgEemfz7NDJz6OeKf12Lsu+QC+s3BVpda64lTiMYCyGwg5ki4vFxkMwQdeZDl2adZoqUgdFuTgQ==}
@@ -2021,6 +2021,10 @@ packages:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
     engines: {node: '>=8'}
 
+  loose-envify@1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
@@ -2098,6 +2102,10 @@ packages:
 
   nwsapi@2.2.28:
     resolution: {integrity: sha512-IlVB7OS7qrOsVYlpnFIkETjMwT9jwvmocJmmM+GZU/PAB3uGi9Ezd7vcWhWBUnSc0ya4ppmQITOyP1ez9gg8cg==}
+
+  object-assign@4.1.1:
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
+    engines: {node: '>=0.10.0'}
 
   onetime@5.1.2:
     resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
@@ -2208,6 +2216,9 @@ packages:
     resolution: {integrity: sha512-byhRAPguVKMQIj4kjJwJ5lAskVhfuiSdiYl/aLTWpgkGEmic2jYhJh1yE9ih8Ox44Xg9ccCT11/S6QrzSJuNrg==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
 
+  prop-types@15.8.1:
+    resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
+
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -2219,6 +2230,9 @@ packages:
     resolution: {integrity: sha512-Y0bARz53lhEC1NMCASs0/j+faB/zqt3R8hpvg1e8+61ZVJ4UL0UdC4cBbXfZMcIuhrfgeILTLe+ZeBCavQPtKQ==}
     peerDependencies:
       react: ^19.3.1
+
+  react-is@16.13.1:
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
@@ -2236,6 +2250,17 @@ packages:
   redent@3.0.0:
     resolution: {integrity: sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==}
     engines: {node: '>=8'}
+
+  rehackt@0.1.0:
+    resolution: {integrity: sha512-7kRDOuLHB87D/JESKxQoRwv4DzbIdwkAGQ7p6QKGdVlY1IZheUnVhlk/4UZlNUVxdAXpyxikE3URsG067ybVzw==}
+    peerDependencies:
+      '@types/react': '*'
+      react: '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
 
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -2256,9 +2281,6 @@ packages:
 
   rrweb-cssom@0.8.0:
     resolution: {integrity: sha512-guoltQEx+9aMf2gDZ0s62EcV8lsXR+0w8915TC3ITdn2YueuNjdAYh/levpU9nFaoChh9RUS5ZdQMrKfVEN9tw==}
-
-  rxjs@7.8.2:
-    resolution: {integrity: sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==}
 
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
@@ -2353,6 +2375,10 @@ packages:
     resolution: {integrity: sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==}
     engines: {node: '>=10'}
 
+  symbol-observable@4.0.0:
+    resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==}
+    engines: {node: '>=0.10'}
+
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
 
@@ -2386,6 +2412,10 @@ packages:
   tr46@5.1.1:
     resolution: {integrity: sha512-hdF5ZgjTqgAntKkklYw0R03MG2x/bSzTtkxmIRw/sTNV8YXsCJ1tfLAX23lhxhHJlEf3CRCOCGGWw3vI3GaSPw==}
     engines: {node: '>=18'}
+
+  ts-invariant@0.10.3:
+    resolution: {integrity: sha512-uivwYcQaxAucv1CzRp2n/QdYPo4ILf9VXgH19zEIjFx2EJufV16P0JtJVpYHy89DItG6Kwj2oIUjrcK5au+4tQ==}
+    engines: {node: '>=8'}
 
   tslib@2.9.1:
     resolution: {integrity: sha512-a4Ux9VKuIMHsOS7ENbEq6hK2ZGYIT27Rtl0E4eD9KqwxhKiQeMZE/9xb3IdYwWaSOyIBQLExhQgXDTYoiCxnWA==}
@@ -2544,24 +2574,37 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zen-observable-ts@1.2.5:
+    resolution: {integrity: sha512-QZWQekv6iB72Naeake9hS1KxHlotfRpe+WGNbNx5/ta+R3DNjVO2bswf63gXlWDcs+EMd7XY8HfVQyP1X6T4Zg==}
+
+  zen-observable@0.8.15:
+    resolution: {integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==}
+
 snapshots:
 
   '@adobe/css-tools@4.5.0': {}
 
-  '@apollo/client@4.3.8(graphql@17.1.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rxjs@7.8.2)':
+  '@apollo/client@3.14.1(@types/react@19.3.0)(graphql@16.15.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@17.1.0)
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.15.0)
       '@wry/caches': 1.0.1
       '@wry/equality': 0.5.7
       '@wry/trie': 0.5.0
-      graphql: 17.1.0
-      graphql-tag: 2.12.7(graphql@17.1.0)
+      graphql: 16.15.0
+      graphql-tag: 2.12.7(graphql@16.15.0)
+      hoist-non-react-statics: 3.3.2
       optimism: 0.18.1
-      rxjs: 7.8.2
+      prop-types: 15.8.1
+      rehackt: 0.1.0(@types/react@19.3.0)(react@19.3.1)
+      symbol-observable: 4.0.0
+      ts-invariant: 0.10.3
       tslib: 2.9.1
+      zen-observable-ts: 1.2.5
     optionalDependencies:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
 
   '@asamuzakjp/css-color@3.2.0':
     dependencies:
@@ -2848,6 +2891,10 @@ snapshots:
       '@whatwg-node/promise-helpers': 2.0.2
       graphql: 17.1.0
       tslib: 2.9.1
+
+  '@graphql-typed-document-node/core@3.2.0(graphql@16.15.0)':
+    dependencies:
+      graphql: 16.15.0
 
   '@graphql-typed-document-node/core@3.2.0(graphql@17.1.0)':
     dependencies:
@@ -3917,9 +3964,9 @@ snapshots:
 
   graceful-fs@4.2.12: {}
 
-  graphql-tag@2.12.7(graphql@17.1.0):
+  graphql-tag@2.12.7(graphql@16.15.0):
     dependencies:
-      graphql: 17.1.0
+      graphql: 16.15.0
       tslib: 2.9.1
 
   graphql-yoga@6.1.0(graphql@17.1.0):
@@ -3942,9 +3989,15 @@ snapshots:
       - pino
       - winston
 
+  graphql@16.15.0: {}
+
   graphql@17.1.0: {}
 
   has-flag@4.0.0: {}
+
+  hoist-non-react-statics@3.3.2:
+    dependencies:
+      react-is: 16.13.1
 
   html-encoding-sniffer@4.0.0:
     dependencies:
@@ -4454,6 +4507,10 @@ snapshots:
     dependencies:
       p-locate: 4.1.0
 
+  loose-envify@1.4.0:
+    dependencies:
+      js-tokens: 4.0.0
+
   lru-cache@10.4.3: {}
 
   lru-cache@11.5.3: {}
@@ -4505,6 +4562,8 @@ snapshots:
       path-key: 3.1.1
 
   nwsapi@2.2.28: {}
+
+  object-assign@4.1.1: {}
 
   onetime@5.1.2:
     dependencies:
@@ -4635,6 +4694,12 @@ snapshots:
       '@jest/schemas': 30.5.0
       ansi-styles: 5.2.0
 
+  prop-types@15.8.1:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+
   punycode@2.3.1: {}
 
   pure-rand@7.0.1: {}
@@ -4643,6 +4708,8 @@ snapshots:
     dependencies:
       react: 19.3.1
       scheduler: 0.28.0
+
+  react-is@16.13.1: {}
 
   react-is@17.0.2: {}
 
@@ -4656,6 +4723,11 @@ snapshots:
     dependencies:
       indent-string: 4.0.0
       strip-indent: 3.0.0
+
+  rehackt@0.1.0(@types/react@19.3.0)(react@19.3.1):
+    optionalDependencies:
+      '@types/react': 19.3.0
+      react: 19.3.1
 
   require-directory@2.1.1: {}
 
@@ -4688,10 +4760,6 @@ snapshots:
       '@rolldown/binding-win32-x64-msvc': 1.2.19
 
   rrweb-cssom@0.8.0: {}
-
-  rxjs@7.8.2:
-    dependencies:
-      tslib: 2.9.1
 
   safer-buffer@2.1.2: {}
 
@@ -4768,6 +4836,8 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
+  symbol-observable@4.0.0: {}
+
   symbol-tree@3.2.4: {}
 
   synckit@0.11.13:
@@ -4800,6 +4870,10 @@ snapshots:
   tr46@5.1.1:
     dependencies:
       punycode: 2.3.1
+
+  ts-invariant@0.10.3:
+    dependencies:
+      tslib: 2.9.1
 
   tslib@2.9.1: {}
 
@@ -4925,3 +4999,9 @@ snapshots:
       yargs-parser: 21.1.1
 
   yocto-queue@0.1.0: {}
+
+  zen-observable-ts@1.2.5:
+    dependencies:
+      zen-observable: 0.8.15
+
+  zen-observable@0.8.15: {}
