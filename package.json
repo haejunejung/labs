@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "pnpm --filter @labs/app dev",
     "lint": "oxlint",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
