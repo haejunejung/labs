@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm --filter @labs/app dev",
+    "dev": "pnpm --parallel --filter @labs/app --filter @labs/mock-server dev",
     "lint": "oxlint",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
@@ -16,7 +16,7 @@
     "typescript": "5.9.3"
   },
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.18.0"
   },
   "packageManager": "pnpm@10.28.2"
 }
