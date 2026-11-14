@@ -4,6 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>labs</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 24px;
+        background: #f6f7f9;
+        color: #1d2330;
+      }
+      main {
+        max-width: 880px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #dde1e8;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+      }
+      .card header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .card h2 {
+        font-size: 16px;
+        margin: 0;
+      }
+      .expectation {
+        color: #545c6b;
+        font-size: 14px;
+      }
+      .run {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .stage {
+        border: 1px dashed #c4cad4;
+        border-radius: 6px;
+        padding: 8px 12px;
+      }
+      .nested {
+        margin-left: 16px;
+        padding-left: 8px;
+        border-left: 2px solid #c4cad4;
+      }
+      .ok {
+        color: #1a7f37;
+      }
+      .loading {
+        color: #8c6d00;
+      }
+      .error {
+        color: #c62828;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin: 8px 0;
+      }
+      .controls button {
+        display: block;
+        margin-bottom: 6px;
+      }
+      .log {
+        font-family: ui-monospace, monospace;
+        font-size: 13px;
+        padding-left: 20px;
+      }
+      .log .failed {
+        color: #c62828;
+      }
+      button {
+        cursor: pointer;
+      }
+      nav {
+        display: flex;
+        gap: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #dde1e8;
+      }
+      nav a[aria-current="page"] {
+        font-weight: 600;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
