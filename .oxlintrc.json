@@ -7,7 +7,9 @@
   },
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "import/no-unassigned-import": "off"
+    "import/no-unassigned-import": "off",
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn"
   },
   "ignorePatterns": ["**/dist/**", "**/coverage/**"]
 }
