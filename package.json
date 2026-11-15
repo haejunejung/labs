@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm --parallel --filter @labs/app --filter @labs/mock-server dev",
+    "dev": "pnpm --filter @labs/app dev",
     "lint": "oxlint",
     "format": "oxfmt",
     "format:check": "oxfmt --check",

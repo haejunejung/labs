@@ -3,9 +3,4 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    proxy: {
-      "/graphql": "http://localhost:4000",
-    },
-  },
 });
