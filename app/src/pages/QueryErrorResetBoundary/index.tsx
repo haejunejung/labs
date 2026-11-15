@@ -52,7 +52,7 @@ const fallbackRender =
   ({ resetErrorBoundary }: { resetErrorBoundary: VoidFunction }) => (
     <div className="error">
       <span>{label} error</span>
-      <button onClick={resetErrorBoundary}>{label} 다시 시도</button>
+      <button onClick={resetErrorBoundary}>Retry {label}</button>
     </div>
   );
 
@@ -66,9 +66,9 @@ type Scenario = {
 
 const scenarios: Scenario[] = [
   {
-    title: "QueryErrorResetBoundary 없음",
+    title: "Without QueryErrorResetBoundary",
     expectation:
-      "다시 시도를 눌러도 요청이 나가지 않고 같은 에러가 다시 뜬다. 에러 후 30초(autoDisposeTimeoutMs)가 지나야 다시 요청한다.",
+      "Retry sends no request and the same error shows again. A new request goes out only once 30 seconds (autoDisposeTimeoutMs) have passed since the error.",
     bookIds: ["1"],
     initialFailures: { "1": 1 },
     render: () => (
@@ -78,9 +78,9 @@ const scenarios: Scenario[] = [
     ),
   },
   {
-    title: "QueryErrorResetBoundary 있음",
+    title: "With QueryErrorResetBoundary",
     expectation:
-      "다시 시도를 누르면 즉시 다시 요청한다. 실패를 더 추가하면 누를 때마다 한 번씩 다시 요청한다.",
+      "Retry sends a new request right away. With more failures queued, each press sends one more request.",
     bookIds: ["1"],
     initialFailures: { "1": 1 },
     render: () => (
@@ -94,9 +94,8 @@ const scenarios: Scenario[] = [
     ),
   },
   {
-    title: "형제 Suspense 함께 복구",
-    expectation:
-      "한 ErrorBoundary 아래 두 쿼리가 모두 실패한다. 다시 시도 한 번으로 둘 다 다시 요청한다.",
+    title: "Sibling Suspense boundaries recover together",
+    expectation: "Both queries under one ErrorBoundary fail. A single retry requests both again.",
     bookIds: ["1", "2"],
     initialFailures: { "1": 1, "2": 1 },
     render: () => (
@@ -111,8 +110,8 @@ const scenarios: Scenario[] = [
     ),
   },
   {
-    title: "형제 QueryErrorResetBoundary 격리",
-    expectation: "book 1만 실패한다. book 1을 다시 시도해도 book 2는 다시 요청하지 않는다.",
+    title: "Sibling QueryErrorResetBoundary isolation",
+    expectation: "Only book 1 fails. Retrying book 1 does not request book 2 again.",
     bookIds: ["1", "2"],
     initialFailures: { "1": 1 },
     render: () => (
@@ -135,9 +134,9 @@ const scenarios: Scenario[] = [
     ),
   },
   {
-    title: "중첩: 바깥 reset이 안쪽으로 전파",
+    title: "Nested: the outer reset propagates inward",
     expectation:
-      "바깥의 book 2가 실패해 바깥 fallback이 뜬다. 바깥을 다시 시도하면 안쪽 book 1도 새 키를 받는다. network-only 계열에서는 book 1도 다시 요청한다.",
+      "Book 2 in the outer boundary fails, so the outer fallback shows. Retrying the outer boundary also gives the inner book 1 a new key. With the network-only family of policies, book 1 is requested again too.",
     bookIds: ["2", "1"],
     initialFailures: { "2": 1 },
     render: () => (
@@ -168,14 +167,14 @@ const RequestLog = ({ store, bookIds }: { store: DemoStore; bookIds: string[] })
       <div>
         {bookIds.map((id) => (
           <button key={id} onClick={() => store.addFailure(id)}>
-            book {id} 다음 요청 실패 +1 (남음 {failuresLeft[id] ?? 0})
+            Fail next book {id} request +1 ({failuresLeft[id] ?? 0} left)
           </button>
         ))}
       </div>
       <ol className="log">
         {log.map((entry) => (
           <li key={entry.seq} className={entry.failed ? "failed" : undefined}>
-            #{entry.seq} book {entry.bookId} {entry.failed ? "실패" : "성공"}
+            #{entry.seq} book {entry.bookId} {entry.failed ? "failed" : "succeeded"}
           </li>
         ))}
       </ol>
@@ -220,7 +219,7 @@ const ScenarioCard = ({
     <section className="card">
       <header>
         <h2>{scenario.title}</h2>
-        <button onClick={() => setRunId((prev) => prev + 1)}>처음부터</button>
+        <button onClick={() => setRunId((prev) => prev + 1)}>Restart</button>
       </header>
       <p className="expectation">{scenario.expectation}</p>
       <ScenarioRun key={`${fetchPolicy}-${runId}`} scenario={scenario} fetchPolicy={fetchPolicy} />
