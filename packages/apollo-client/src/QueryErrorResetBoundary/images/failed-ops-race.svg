@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="failed-ops-race-title failed-ops-race-desc" id="failed-ops-race-root">
+        <title id="failed-ops-race-title">실패한 operation을 모아 다시 요청할 때</title>
+        <desc id="failed-ops-race-desc">onError 링크가 실패한 operation을 전역 목록에 모으고 ErrorBoundary가 그 목록을 다시 요청하는 방식에서, B의 에러가 늦게 도착해 사용자가 두 번 눌러야 하고 도착 순서에 따라 A의 재시도가 B의 operation을 요청할 수도 있음을 보여 준다.</desc>
+        <defs>
+      <style>#failed-ops-race-root { font-family: 'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif; color: #2d3142; }
+      #failed-ops-race-root .diagram-container { width: 100%; overflow-x: auto; }
+      @media print {
+#failed-ops-race-root .diagram-container { overflow-x: visible; }
+}</style>
+  <marker id="failed-ops-race-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+  <marker id="failed-ops-race-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
+  <marker id="failed-ops-race-arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/></marker>
+</defs>
+        <rect width="100%" height="100%" fill="#f5f5f5"/>
+<line x1="120" y1="68" x2="120" y2="548" stroke="#2d3142" stroke-width="1" stroke-dasharray="3,3" stroke-opacity="0.20"/>
+<line x1="340" y1="68" x2="340" y2="548" stroke="#2d3142" stroke-width="1" stroke-dasharray="3,3" stroke-opacity="0.20"/>
+<line x1="600" y1="68" x2="600" y2="548" stroke="#2d3142" stroke-width="1" stroke-dasharray="3,3" stroke-opacity="0.20"/>
+<line x1="840" y1="68" x2="840" y2="548" stroke="#2d3142" stroke-width="1" stroke-dasharray="3,3" stroke-opacity="0.20"/>
+<path d="M120 104 L836 104" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#failed-ops-race-arrow)"/><rect x="204" y="82" width="52" height="14" rx="2" fill="#f5f5f5"/><text x="230.0" y="93" fill="#5a6580" font-size="10" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">query A</text>
+<path d="M340 144 L836 144" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#failed-ops-race-arrow)"/><rect x="444" y="122" width="52" height="14" rx="2" fill="#f5f5f5"/><text x="470.0" y="133" fill="#5a6580" font-size="10" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">query B</text>
+<path d="M840 184 L604 184" fill="none" stroke="#4f5d75" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#failed-ops-race-arrow)"/><rect x="694" y="162" width="52" height="14" rx="2" fill="#f5f5f5"/><text x="720.0" y="173" fill="#5a6580" font-size="10" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">A error</text>
+<path d="M600 216 L628 216 Q636 216 636 224 Q636 232 628 232 L604 232" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#failed-ops-race-arrow)"/><rect x="644" y="216" width="124" height="16" rx="2" fill="#f5f5f5"/><text x="706.0" y="228.0" fill="#2d3142" font-size="12" font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif" text-anchor="middle" font-weight="500">실패 목록 = [opA]</text>
+<path d="M120 272 L596 272" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#failed-ops-race-arrow-link)"/><rect x="190" y="248" width="80" height="16" rx="2" fill="#f5f5f5"/><text x="230.0" y="260" fill="#2e5aa8" font-size="12" font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif" text-anchor="middle" font-weight="500">A 다시 시도</text>
+<path d="M600 312 L836 312" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#failed-ops-race-arrow-link)"/><rect x="680" y="290" width="80" height="14" rx="2" fill="#f5f5f5"/><text x="720.0" y="301" fill="#2e5aa8" font-size="10" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">refetch opA</text>
+<path d="M840 352 L604 352" fill="none" stroke="#bf4520" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#failed-ops-race-arrow-accent)"/><rect x="672" y="330" width="96" height="14" rx="2" fill="#f5f5f5"/><text x="720.0" y="341" fill="#bf4520" font-size="10" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">B error (late)</text>
+<path d="M600 384 L628 384 Q636 384 636 392 Q636 400 628 400 L604 400" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#failed-ops-race-arrow)"/><rect x="644" y="384" width="240" height="16" rx="2" fill="#f5f5f5"/><text x="764.0" y="396.0" fill="#2d3142" font-size="12" font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif" text-anchor="middle" font-weight="500">목록 = [opB] (opA는 재요청 후 제거)</text>
+<path d="M340 440 L596 440" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#failed-ops-race-arrow-link)"/><rect x="430" y="416" width="80" height="16" rx="2" fill="#f5f5f5"/><text x="470.0" y="428" fill="#2e5aa8" font-size="12" font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif" text-anchor="middle" font-weight="500">B 다시 시도</text>
+<path d="M600 480 L836 480" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#failed-ops-race-arrow-link)"/><rect x="680" y="458" width="80" height="14" rx="2" fill="#f5f5f5"/><text x="720.0" y="469" fill="#2e5aa8" font-size="10" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">refetch opB</text>
+<rect x="36" y="24" width="168" height="44" rx="6" fill="#f5f5f5"/><rect x="36" y="24" width="168" height="44" rx="6" fill="#f5f5f5" stroke="#2d3142" stroke-width="1" stroke-opacity="0.45"/>
+<text x="120" y="44" fill="#2d3142" font-size="13" font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif" text-anchor="middle" font-weight="600">섹션 A</text>
+<text x="120" y="60" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">ErrorBoundary A</text>
+<rect x="256" y="24" width="168" height="44" rx="6" fill="#f5f5f5"/><rect x="256" y="24" width="168" height="44" rx="6" fill="#f5f5f5" stroke="#2d3142" stroke-width="1" stroke-opacity="0.45"/>
+<text x="340" y="44" fill="#2d3142" font-size="13" font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif" text-anchor="middle" font-weight="600">섹션 B</text>
+<text x="340" y="60" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">ErrorBoundary B</text>
+<rect x="516" y="24" width="168" height="44" rx="6" fill="#f5f5f5"/><rect x="516" y="24" width="168" height="44" rx="6" fill="#f5f5f5" stroke="#2d3142" stroke-width="1" stroke-opacity="0.45"/>
+<text x="600" y="44" fill="#2d3142" font-size="13" font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif" text-anchor="middle" font-weight="600">onError link</text>
+<text x="600" y="60" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">global failed ops</text>
+<rect x="756" y="24" width="168" height="44" rx="6" fill="#f5f5f5"/><rect x="756" y="24" width="168" height="44" rx="6" fill="#f5f5f5" stroke="#2d3142" stroke-width="1" stroke-opacity="0.45"/>
+<text x="840" y="44" fill="#2d3142" font-size="13" font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif" text-anchor="middle" font-weight="600">Network</text>
+<text x="840" y="60" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">GraphQL server</text>
+<line x1="24" y1="556" x2="936" y2="556" stroke="#2d3142" stroke-width="0.8" stroke-opacity="0.10"/>
+<text x="24" y="584" fill="#2d3142" font-size="14" font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif" text-anchor="start">A를 누른 시점에 B의 에러가 아직 없었으므로 A의 재시도는 opA만 요청했고, B는 따로 눌러야 했다.</text>
+<text x="24" y="606" fill="#2d3142" font-size="14" font-family="'Geist', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif" text-anchor="start">반대로 B의 에러가 먼저 도착했다면 A의 재시도가 opB까지 요청한다. 결과가 도착 순서에 달려 있다.</text>
+      </svg>
